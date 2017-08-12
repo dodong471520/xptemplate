@@ -65,21 +65,13 @@ std::map<`typeKey^,`val^>   `name^;
 XPT class   " class ..
 class `className^`$BRfun^{
 public:
-    `className^(`$SParg`ctorParam?`$SParg^);
-    ~`className^();
-    `className^(`$SParg^const `className^ &cpy`$SParg^);
-    `cursor^
-private:
+	`cursor^
+    `className^(){CleanUp();}
+    ~`className^(){}
+    void CleanUp()
+    {
+    }
 };
-
-`className^::`className^(`ctorParam?^)`$BRfun^{
-}
-
-`className^::~`className^()`$BRfun^{
-}
-
-`className^::`className^(`$SParg^gconst `className^ &cpy`$SParg^)`$BRfun^{
-}
 ..XPT
 
 XPT functor " class operator..
@@ -133,24 +125,12 @@ template
     <`templateParam^>
 class `className^`$BRfun^{
 public:
-    `className^(`$SParg`ctorParam?`$SParg^);
-    ~`className^();
-    `className^(`$SParg^const `className^ &cpy`$SParg^);
+    `className^(`$SParg`ctorParam?`$SParg^){}
+    ~`className^(){}
+    `className^(`$SParg^const `className^ &cpy`$SParg^){}
     `cursor^
 private:
 };
-
-template <`templateParam^>
-`className^<`_^cleanTempl(R('templateParam'))^^>::`className^(`ctorParam?^)`$BRfun^{
-}
-
-template <`templateParam^>
-`className^<`_^cleanTempl(R('templateParam'))^^>::~`className^()`$BRfun^{
-}
-
-template <`templateParam^>
-`className^<`_^cleanTempl(R('templateParam'))^^>::`className^(`$SParg^gconst `className^ &cpy`$SParg^)`$BRfun^{
-}
 ..XPT
 
 XPT try wrap=what " try .. catch..
